@@ -92,9 +92,59 @@ var tipsList = [
 	},
 	{
 		selector: 'x:not(selector)',
-		example: '<pre class="prettyprint linenums">div:not(#container) {<br>color: blue;<br>}</pre>',
+		example: '<pre class="prettyprint linenums">div:not(#container) {<br>color: blue;<br>font-size: 1.2em;<br>}</pre>',
 		description: "The <strong>negation</strong> pseudo class is particularly helpful. Let's say I want to select all divs, except for the one which has an id of container. The snippet above will handle that task perfectly."
-	}																										
+	},
+	{
+		selector: 'x::first-letter',
+		example: '<pre class="prettyprint linenums">p::first-line {<br>font-weight: bold;<br>}</pre>',
+		description: "We can use pseudo elements (designated by <span class='code'>::</span>) to style fragments of an element, such as the first line, or the first letter. Keep in mind that these must be applied to block level elements in order to take effect."
+	},
+	{
+		selector: 'x:nth-child(n)',
+		example: '<pre class="prettyprint linenums">li:nth-child(3) {<br>color: red;<br>}</pre>',
+		description: "Targets specific elements in a stack.<br>nth-child accepts an integer as a parameter, however, this is not zero-based. If you wish to target the second list item, use li:nth-child(2).<br>We can even use this to select a variable set of children. For example, we could do li:nth-child(4n) to select every fourth list item."
+	},
+	{
+		selector: 'x:nth-last-child(n)',
+		example: '<pre class="prettyprint linenums">li:nth-last-child(2) {<br>color: red;<br>}</pre>',
+		description: "What if you had a huge list of items in a <span class='code'>ul</span>, and only needed to access, say, the third to the last item? Rather than doing li:nth-child(397), you could instead use the nth-last-child pseudo class.<br>This technique works almost identically from number sixteen above, however, the difference is that it begins at the end of the collection, and works its way back."
+	},
+	{
+		selector: 'x:nth-of-type(n)',
+		example: '<pre class="prettyprint linenums">ul:nth-of-type(3) {<br>border: 1px solid black;<br>}</pre>',
+		description: "There will be times when, rather than selecting a child, you instead need to select according to the type of element.<br>Imagine mark-up that contains five unordered lists. If you wanted to style only the third ul, and didn't have a unique id to hook into, you could use the nth-of-type(n) pseudo class."
+	},
+	{
+		selector: 'x:nth-last-of-type(n)',
+		example: '<pre class="prettyprint linenums">ul:nth-last-of-type(3) {<br>border: 1px solid black;<br>}</pre>',
+		description: "We can also use nth-last-of-type to begin at the end of the selectors list, and work our way back to target the desired element."
+	},
+	{
+		selector: 'x:first-child',
+		example: '<pre class="prettyprint linenums">ul li:first-child {<br>border-top: none;<br>}</pre>',
+		description: "This structural pseudo class allows us to target only the first child of the element's parent. You'll often use this to remove borders from the first and last list items."
+	},
+	{
+		selector: 'x:last-child',
+		example: '<pre class="prettyprint linenums">ul > li:last-child {<br>color: green;<br>}</pre>',
+		description: "The opposite of <span class='code'>first-child</span>, <span class='code'>last-child</span> will target the last item of the element's parent."
+	},
+	{
+		selector: 'x:only-child',
+		example: '<pre class="prettyprint linenums">div p:only-child {<br>color: red;<br>}</pre>',
+		description: "This allows you to target elements which are the <i>only</i> child of its parent."
+	},
+	{
+		selector: 'x:only-of-type',
+		example: '<pre class="prettyprint linenums">li:only-of-type {<br>font-weight: bold;<br>}</pre>',
+		description: "This structural pseudo class can be used in some clever ways. It will target elements that do not have any siblings within its parent container."
+	},
+	{
+		selector: 'x:first-of-type',
+		example: '<pre class="prettyprint linenums">p:first-of-type {<br>font-size: 1.25em;<br>}</pre>',
+		description: "The <span class='code'>:first-of-type</span> selector in CSS allows you to target the first occurence of an element within its container."
+	}						
 ];
 
 
