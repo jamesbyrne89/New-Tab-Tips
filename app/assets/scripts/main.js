@@ -47,18 +47,55 @@ var tipsList = [
 	},
 	{
 		selector: 'x[title]',
-		example: '<pre class="prettyprint linenums">a[title] {<br>color: green;<br>}</pre>',
-		description: "Referred to as an <strong>attributes selector</strong>, in our example above, this will only select the anchor tags that have a <span class='code'>title</span>attribute. Anchor tags which do not will not receive this particular styling."
-	}														
+		example: '<pre class="prettyprint linenums">a[title] {<br>color: #1f6053;<br>}</pre>',
+		description: "Referred to as an <strong>attributes selector</strong>, in our example above, this will only select the anchor tags that have a <span class='code'>title</span> attribute. Anchor tags which do not will not receive this particular styling."
+	},
+	{
+		selector: 'x[href="foo"]',
+		example: '<pre class="prettyprint linenums">a[href="http://net.tutsplus.com"] {<br>color: green;<br>}</pre>',
+		description: "The snippet above will style all anchor tags which link to http://net.tutsplus.com; they'll receive our branded green color. All other anchor tags will remain unaffected. in our example above, this will only select the anchor tags that have a <span class='code'>title</span> attribute. Anchor tags which do not will not receive this particular styling."
+	},
+	{
+		selector: 'x[href^="http"]',
+		example: '<pre class="prettyprint linenums">a[href^="http"] {<br>background: url(path/to/external/icon.png) no-repeat;<br>padding-left: 10px;<br>}</pre>',
+		description: "Ever wonder how some websites are able to display a little icon next to the links which are external? I'm sure you've seen these before; they're nice reminders that the link will direct you to an entirely different website.<br>This is a cinch with the carat symbol. It's most commonly used in regular expressions to designate the beginning of a string. If we want to target all anchor tags that have a href which begins with http, we could use a selector similar to the snippet shown above."
+	},
+	{
+		selector: 'x[href$=".jpg"]',
+		example: '<pre class="prettyprint linenums">a[href$=".jpg"] {<br>color: red;<br>}</pre>',
+		description: "Again, we use a regular expressions symbol, $, to refer to the end of a string. In this case, we're searching for all anchors which link to an image - or at least a url that ends with .jpg. Keep in mind that this certainly won't work for gifs and pngs."
+	},
+	{
+		selector: 'x[data-*="foo"]',
+		example: '<pre class="prettyprint linenums">a[data-filetype="image"] {<br>color: red;<br>}</pre>',
+		description: "How do we compensate for all of the various image types: png, jpeg,jpg, gif? If we added our own <span class='code'>data-filetype</span> attribute to each anchor that links to an image, we can use a standard attributes selector to target only those anchors."
+	},
+	{
+		selector: 'x[foo~="bar"]',
+		example: '<pre class="prettyprint linenums">a[data-info~="external"] {<br>color: red;<br>}<br><br>a[data-info~="image"] {<br>border: 1px solid black;<br>}</pre>',
+		description: "Here's a special one that'll impress your friends. Not too many people know about this trick. The tilda (~) symbol allows us to target an attribute which has a spaced-separated list of values."
+	},
+	{
+		selector: 'x:checked',
+		example: '<pre class="prettyprint linenums">input[type=radio]:checked {<br>border: 1px solid black;<br>}</pre>',
+		description: "This pseudo class will only target a user interface element that has been checked - like a radio button, or checkbox. It's as simple as that."
+	},
+	{
+		selector: 'x:after',
+		example: '<pre class="prettyprint linenums">.clearfix:after {<br>content: "";<br>display: block;<br>clear: both;<br>visibility: hidden;<br>font-size: 0;<br>height: 0;<br>}<br><br>.clearfix {<br>content: "";<br>*display: inline-block;<br>_height: 1%;<br>}</pre>',
+		description: "The before and after pseudo classes kick butt. Every day, it seems, people are finding new and creative ways to use them effectively. They simply generate content around the selected element.<br>Many were first introduced to these classes when they encountered the clearfix hack.<br>This hack uses the <span class='code'>:after</span> pseudo class to append a space after the element, and then clear it. It's an excellent trick to have in your tool bag, particularly in the cases when the <span class='code'>overflow: hidden;</span> method isn't possible."
+	},
+	{
+		selector: 'x:hover',
+		example: '<pre class="prettyprint linenums">div:hover {<br>background: #e3e3e3;<br>}</pre>',
+		description: "The official term for this is <strong>user action pseudo class</strong>. It sounds confusing, but it really isn't. Want to apply specific styling when a user hovers over an element? This will get the job done!"
+	},
+	{
+		selector: 'x:not(selector)',
+		example: '<pre class="prettyprint linenums">div:not(#container) {<br>color: blue;<br>}</pre>',
+		description: "The <strong>negation</strong> pseudo class is particularly helpful. Let's say I want to select all divs, except for the one which has an id of container. The snippet above will handle that task perfectly."
+	}																										
 ];
-
-const backgroundColours = 
-[
-'#ECDEDA',
-'#FFF4E9',
-'#DCE7E9',
-'#D1C7B2'
-]
 
 
 

@@ -33,6 +33,8 @@ body {
   background-color: #D1C7B2;
   padding: 4rem;
   flex: 0 0 50vw;
+  display: flex;
+  justify-content: center;
 }
 
 .code {
@@ -43,7 +45,6 @@ body {
 .wrapper {
   text-align: right;
   min-width: 200px;
-  height: 30vh;
   margin-top: 15vh;
   padding: 2rem 0;
 }
@@ -99,12 +100,12 @@ body {
 
 
 .tip__selector {
-  font-size: 6rem;
+  font-size: 4.5rem;
   font-family: inherit;
   font-weight: 800;
   text-align: right;
   line-height: 1.2;
-  font-family: 'catamaran';
+  font-family: 'poppins';
 }
 
 .tip__description {
@@ -114,6 +115,7 @@ body {
   font-weight: 400;
   padding: 1rem 0;
   max-width: 500px;
+  font-weight: 300;
 }
 
 .disabled {
@@ -122,7 +124,7 @@ body {
   cursor: not-allowed !important;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
 
   body {
     flex-direction: column;
@@ -130,7 +132,44 @@ body {
 
   .tip-left, .tip-right {
     height: 50vh;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
   }
+
+  .tip-left {
+    flex: 0 0 30vh;
+  }
+
+   .tip-right {
+    flex: 0 0 70vh;
+  } 
+
+  .wrapper {
+    margin-top: 0;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .tip__selector {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .tip__example {
+    margin-top: 0;
+    margin: auto;
+  }
+
+  .tip__description {
+    padding: 0;
+    text-align: left;
+    margin: auto;
+  }
+.prettyprint {
+  font-size: 1rem;
+}
 
 
 }
@@ -169,6 +208,7 @@ li.L9 {
   background-color: #FFFFFF;
   list-style-type: decimal;
   line-height: 1.75;
+  text-align: left;
 }
 
 @media screen {
