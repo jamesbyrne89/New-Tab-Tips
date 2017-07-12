@@ -9,5 +9,6 @@
   },
   "icons": {
     "128": "assets/images/icon.png"
-  }
+  },
+  "content_security_policy": "script-src 'self' https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css; object-src 'self'"
 }
