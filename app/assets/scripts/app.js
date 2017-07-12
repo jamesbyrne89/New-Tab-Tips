@@ -23,27 +23,27 @@ var tipsList = [
 	{
 		selector: 'x',
 		example: '<pre class="prettyprint linenums">a { color: red; }<br>ul { margin-left: 0; }</pre>',
-		description: "What if you want to target all elements on a page, according to their type, rather than an id or classname? Keep it simple, and use a <strong>type selector</strong>. E.g. if you need to target all unordered lists, use ul {}."
+		description: "What if you want to target all elements on a page, according to their type, rather than an id or classname? Keep it simple, and use a <strong>type selector</strong>. E.g. if you need to target all unordered lists, use <span class='code'>ul {}</span>."
 	},
 	{
 		selector: 'x:visited<br>x:link',
 		example: '<pre class="prettyprint linenums">a:link { color: red; }<br>a:visited { color: purple; }</pre>',
-		description: "We use the :link pseudo-class to target all anchors tags which have yet to be clicked on.<br>Alternatively, we also have the :visited pseudo class, which, as you'd expected, allows us to apply specific styling to only the anchor tags on the page which have been clicked on, or visited."
+		description: "We use the <span class='code'>:link</span> pseudo-class to target all anchors tags which have yet to be clicked on.<br>Alternatively, we also have the :visited pseudo class, which, as you'd expected, allows us to apply specific styling to only the anchor tags on the page which have been clicked on, or visited."
 	},
 	{
 		selector: 'x + y',
 		example: '<pre class="prettyprint linenums">ul + p {<br>color: red;<br>}</pre>',
-		description: "This is referred to as an adjacent selector. It will select only the element that is immediately preceded by the former element. In this case, only the first paragraph after each ul will have red text."
+		description: "This is referred to as an <strong>adjacent selector</strong>. It will select only the element that is immediately preceded by the former element. In this case, only the first paragraph after each <span class='code'>ul</span> will have red text."
 	},
 	{
 		selector: 'x > y',
 		example: '<pre class="prettyprint linenums">div#container > ul {<br>border: 1px solid black;<br>}</pre>',
-		description: "The difference between the standard <span class='code'>X Y</span> and <span class='code'>X > Y</span> is that the latter will only select direct children.<br>A selector of <span class='code'>#container > ul</span> will only target the uls which are direct children of the div with an id of container. It will not target, for instance, the ul that is a child of the first li.<br>For this reason, there are performance benefits in using the child combinator. In fact, it's recommended particularly when working with JavaScript-based CSS selector engines."
+		description: "The difference between the standard <span class='code'>X Y</span> and <span class='code'>X > Y</span> is that the latter will only select direct children.<br>A selector of <span class='code'>#container > ul</span> will only target the uls which are direct children of the <span class='code'>div</span> with an id of container. It will not target, for instance, the <span class='code'>ul</span> that is a child of the first <span class='code'>li</span>.<br>For this reason, there are performance benefits in using the child combinator. In fact, it's recommended particularly when working with JavaScript-based CSS selector engines."
 	},
 	{
 		selector: 'x ~ y',
 		example: '<pre class="prettyprint linenums">ul ~ p {<br>color: red;<br>}</pre>',
-		description: "This sibling combinator is similar to <span class='code'>X + Y</span>, however, it's less strict. While an adjacent selector <span class='code'>(ul + p)</span> will only select the first element that is immediately preceded by the former selector, this one is more generalized. It will select, referring to our example above, any p elements, as long as they follow a ul."
+		description: "This <strong>sibling combinator</strong> is similar to <span class='code'>X + Y</span>, however, it's less strict. While an adjacent selector <span class='code'>(ul + p)</span> will only select the first element that is immediately preceded by the former selector, this one is more generalized. It will select, referring to our example above, any p elements, as long as they follow a <span class='code'>ul</span>."
 	},
 	{
 		selector: 'x[title]',
@@ -63,7 +63,7 @@ var tipsList = [
 	{
 		selector: 'x[href$=".jpg"]',
 		example: '<pre class="prettyprint linenums">a[href$=".jpg"] {<br>color: red;<br>}</pre>',
-		description: "Again, we use a regular expressions symbol, $, to refer to the end of a string. In this case, we're searching for all anchors which link to an image - or at least a url that ends with .jpg. Keep in mind that this certainly won't work for gifs and pngs."
+		description: "Again, we use a regular expressions symbol, $, to refer to the end of a string. In this case, we're searching for all anchors which link to an image - or at least a url that ends with .jpg. Keep in mind that this won't work for gifs and pngs."
 	},
 	{
 		selector: 'x[data-*="foo"]',
@@ -73,12 +73,12 @@ var tipsList = [
 	{
 		selector: 'x[foo~="bar"]',
 		example: '<pre class="prettyprint linenums">a[data-info~="external"] {<br>color: red;<br>}<br><br>a[data-info~="image"] {<br>border: 1px solid black;<br>}</pre>',
-		description: "Here's a special one that'll impress your friends. Not too many people know about this trick. The tilda (~) symbol allows us to target an attribute which has a spaced-separated list of values."
+		description: "The tilda (~) symbol allows us to target an attribute which has a spaced-separated list of values."
 	},
 	{
 		selector: 'x:checked',
 		example: '<pre class="prettyprint linenums">input[type=radio]:checked {<br>border: 1px solid black;<br>}</pre>',
-		description: "This pseudo class will only target a user interface element that has been checked - like a radio button, or checkbox. It's as simple as that."
+		description: "This pseudo class will only target a user interface element that has been checked - like a radio button, or checkbox."
 	},
 	{
 		selector: 'x:after',
@@ -108,12 +108,12 @@ var tipsList = [
 	{
 		selector: 'x:nth-last-child(n)',
 		example: '<pre class="prettyprint linenums">li:nth-last-child(2) {<br>color: red;<br>}</pre>',
-		description: "What if you had a huge list of items in a <span class='code'>ul</span>, and only needed to access, say, the third to the last item? Rather than doing li:nth-child(397), you could instead use the nth-last-child pseudo class.<br>This technique works almost identically from number sixteen above, however, the difference is that it begins at the end of the collection, and works its way back."
+		description: "What if you had a huge list of items in a <span class='code'>ul</span>, and only needed to access, say, the third to the last item? Rather than doing <span class='code'>li:nth-child(397)</span>, you could instead use the nth-last-child pseudo class.<br>This technique works almost identically from number sixteen above, however, the difference is that it begins at the end of the collection, and works back."
 	},
 	{
 		selector: 'x:nth-of-type(n)',
 		example: '<pre class="prettyprint linenums">ul:nth-of-type(3) {<br>border: 1px solid black;<br>}</pre>',
-		description: "There will be times when, rather than selecting a child, you instead need to select according to the type of element.<br>Imagine mark-up that contains five unordered lists. If you wanted to style only the third ul, and didn't have a unique id to hook into, you could use the nth-of-type(n) pseudo class."
+		description: "There will be times when, rather than selecting a child, you instead need to select according to the type of element.<br>Imagine mark-up that contains five unordered lists. If you wanted to style only the third <span class='code'>ul</span>, and didn't have a unique id to hook into, you could use the nth-of-type(n) pseudo class."
 	},
 	{
 		selector: 'x:nth-last-of-type(n)',
@@ -138,7 +138,7 @@ var tipsList = [
 	{
 		selector: 'x:only-of-type',
 		example: '<pre class="prettyprint linenums">li:only-of-type {<br>font-weight: bold;<br>}</pre>',
-		description: "This structural pseudo class can be used in some clever ways. It will target elements that do not have any siblings within its parent container."
+		description: "This structural pseudo class will target elements that do not have any siblings within its parent container."
 	},
 	{
 		selector: 'x:first-of-type',
@@ -146,8 +146,6 @@ var tipsList = [
 		description: "The <span class='code'>:first-of-type</span> selector in CSS allows you to target the first occurence of an element within its container."
 	}						
 ];
-
-
 
 
 
