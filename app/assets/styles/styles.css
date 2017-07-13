@@ -51,7 +51,6 @@ aside a:hover {
   height: 100vh;
   width: 50%;
   flex: 0 0 50vw;
-  max-width: 1000px;
   background-color: white;
   display: flex;
   justify-content: flex-end;

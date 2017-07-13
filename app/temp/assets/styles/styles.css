@@ -61,7 +61,6 @@ aside a:hover {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50vw;
           flex: 0 0 50vw;
-  max-width: 1000px;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
