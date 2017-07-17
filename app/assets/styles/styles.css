@@ -39,7 +39,8 @@ aside::before {
 
 aside a, aside a:visited {
 	text-decoration: none;
-	transition: all 0.3s;
+	transition: opacity 0.3s;
+  color: #000;
 }
 
 aside a:hover {
