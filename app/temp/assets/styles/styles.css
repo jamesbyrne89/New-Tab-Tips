@@ -45,7 +45,7 @@ aside::before {
 	background: #303346;
 }
 
-aside a {
+aside a, aside a:visited {
 	text-decoration: none;
 	transition: all 0.3s;
 }
