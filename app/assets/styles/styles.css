@@ -63,6 +63,7 @@ aside a:hover {
   padding: 4rem;
   flex: 0 0 50vw;
   display: flex;
+  overflow-y: scroll;
 }
 
 .code {
@@ -75,6 +76,11 @@ aside a:hover {
   min-width: 200px;
   margin-top: 15vh;
   padding: 2rem 0;
+}
+
+.wrapper--right {
+  display: flex;
+align-items: center;
 }
 
 .code-block {
@@ -122,7 +128,7 @@ aside a:hover {
 
 
 .tip__example {
-  margin-top: 40vh;
+  margin-top: 50vh;
   max-width: 500px;
 }
 
